@@ -25,6 +25,15 @@ const Login = () => {
 			setPassword('')
 		}
 	}
+	const handleDummyLogin = async (e) => {
+		e.preventDefault()
+		try {
+			await firebase.auth().signInWithEmailAndPassword('jon@test.com', '123456')
+			history.push(ROUTES.DASHBOARD)
+		} catch (err) {
+			setError(err.message)
+		}
+	}
 
 	useEffect(() => {
 		document.title = 'Login - Instagram'
@@ -80,6 +89,19 @@ const Login = () => {
 						</Link>
 					</p>
 				</div>
+				<form
+					className='mt-4 flex justify-center items-center flex-col w-full bg-white p-4 border border-gray-primary rounded'
+					onSubmit={handleDummyLogin}
+					method='post'
+				>
+					<p className='text-sm'>Click below to login as a Dummy User</p>
+					<button
+						className='bg-blue-medium mt-4 text-white px-4 rounded h-8 font-bold '
+						type='submit'
+					>
+						Test User Login
+					</button>
+				</form>
 			</div>
 		</div>
 	)
