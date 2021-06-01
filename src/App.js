@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import * as ROUTES from './constants/routes'
 import useAuthListener from './hooks/useAuthListener'
 import UserContext from './context/user'
-import { ProtectedRoute } from './helpers/routes'
+import ProtectedRoute from './helpers/ProtectedRoute'
 
 const Login = lazy(() => import('./pages/login'))
 const Signup = lazy(() => import('./pages/signup'))
@@ -18,7 +18,9 @@ function App() {
 			<Router>
 				<Suspense fallback={<p>Loading...</p>}>
 					<Switch>
-						<Route exact path={ROUTES.DASHBOARD} component={Dashboard} />
+						<ProtectedRoute exact path={ROUTES.DASHBOARD} user={user}>
+							<Dashboard />
+						</ProtectedRoute>
 						<Route exact path={ROUTES.LOGIN} component={Login} />
 						<Route exact path={ROUTES.SIGNUP} component={Signup} />
 						<Route exact component={NotFound} />

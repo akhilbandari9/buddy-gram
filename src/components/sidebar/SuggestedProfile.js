@@ -27,6 +27,7 @@ const SuggestedProfile = ({
 			<div className='py-2 w-full flex flex-row items-center '>
 				<img
 					src={`/images/avatars/${username}.jpg`}
+					onError={(e) => (e.target.src = `/images/avatars/default.png`)}
 					className='h-8 mr-3 rounded-full'
 					alt={`${username}`}
 				/>

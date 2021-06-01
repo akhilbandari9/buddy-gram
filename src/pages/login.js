@@ -10,6 +10,7 @@ const Login = () => {
 	const [password, setPassword] = useState('')
 	const [error, setError] = useState('')
 	const [loading, setLoading] = useState(false)
+	const [loading2, setLoading2] = useState(false)
 
 	const isInvalid = password === '' || email === ''
 
@@ -27,10 +28,13 @@ const Login = () => {
 	}
 	const handleDummyLogin = async (e) => {
 		e.preventDefault()
+		setLoading2(true)
+
 		try {
 			await firebase.auth().signInWithEmailAndPassword('jon@test.com', '123456')
 			history.push(ROUTES.DASHBOARD)
 		} catch (err) {
+			setLoading2(false)
 			setError(err.message)
 		}
 	}
@@ -99,7 +103,7 @@ const Login = () => {
 						className='bg-blue-medium mt-4 text-white px-4 rounded h-8 font-bold '
 						type='submit'
 					>
-						Test User Login
+						{loading2 ? `Logging In...` : `Test User Login`}
 					</button>
 				</form>
 			</div>

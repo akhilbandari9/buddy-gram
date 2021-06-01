@@ -9,7 +9,7 @@ module.exports = {
 				DEFAULT: '#ffffff',
 			},
 			blue: {
-				medium: '#005c98',
+				medium: '#0095f6',
 			},
 			black: {
 				light: '#262626',
