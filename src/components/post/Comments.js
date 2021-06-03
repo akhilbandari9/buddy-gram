@@ -7,10 +7,10 @@ const Comments = ({ docId, comments: allComments, posted, commentInput }) => {
 	const [comments, setComments] = useState(allComments)
 	return (
 		<section>
-			<div className='p-4 pt-1 pb-4'>
+			<div className='p-4 pt-0 pb-4'>
 				{comments.length >= 3 && (
 					<p className='text-sm text-gray-base mb-1 cursor-pointer'>
-						View All {comments.length}
+						View All Comments
 					</p>
 				)}
 				{comments.slice(0, 3).map((item, index) => (

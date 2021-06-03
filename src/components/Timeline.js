@@ -1,11 +1,9 @@
-import { memo } from 'react'
 import Skeleton from 'react-loading-skeleton'
 import useGetPhotos from '../hooks/useGetPhotos'
 import Post from './post'
 
 const Timeline = () => {
 	const { photos } = useGetPhotos()
-
 	return (
 		<section className='col-span-3  md:col-span-2  container max-w-screen-sm mx-auto'>
 			{!photos ? (
@@ -21,4 +19,4 @@ const Timeline = () => {
 	)
 }
 
-export default memo(Timeline)
+export default Timeline

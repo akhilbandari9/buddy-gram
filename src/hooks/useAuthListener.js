@@ -3,9 +3,9 @@ import FirebaseContext from '../context/firebase'
 
 const useAuthListener = () => {
 	const { firebase } = useContext(FirebaseContext)
-	const [user, setUser] = useState(() => {
+	const [user, setUser] = useState(() =>
 		JSON.parse(localStorage.getItem('authUser'))
-	})
+	)
 
 	useEffect(() => {
 		const listener = firebase.auth().onAuthStateChanged((authUser) => {

@@ -1,4 +1,4 @@
-import useUser from '../../hooks/useUser'
+import useActiveUser from '../../hooks/useActiveUser'
 import User from './User'
 import Suggestions from './Suggestions'
 import Footer from './Footer'
@@ -6,7 +6,7 @@ import Footer from './Footer'
 const Sidebar = () => {
 	const {
 		user: { docId, fullname, username, userId, following },
-	} = useUser()
+	} = useActiveUser()
 
 	return (
 		<section className='hidden md:block p-4'>

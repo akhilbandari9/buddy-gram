@@ -1,4 +1,4 @@
-import { useState, useEffect, Suspense, memo } from 'react'
+import { useState, useEffect, memo } from 'react'
 import PropTypes from 'prop-types'
 import Skeleton from 'react-loading-skeleton'
 import { getSuggestedProfiles } from '../../services/firebase'
@@ -15,7 +15,7 @@ const Suggestions = ({ loggedInUserDocId, userId, following }) => {
 		}
 
 		userId && suggestedProfiles()
-	}, [userId])
+	}, [userId, following])
 
 	return !profiles ? (
 		<Skeleton count={5} height={48} />

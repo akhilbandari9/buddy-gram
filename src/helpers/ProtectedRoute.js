@@ -6,14 +6,13 @@ const ProtectedRoute = ({ children, user, ...rest }) => {
 		<Route
 			{...rest}
 			render={({ location }) => {
+				if (user) return children
 				if (!user)
 					return (
 						<Redirect
 							to={{ pathname: ROUTES.LOGIN, state: { from: location } }}
 						/>
 					)
-				if (user) return children
-
 				return null
 			}}
 		/>

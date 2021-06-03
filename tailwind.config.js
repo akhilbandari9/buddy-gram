@@ -25,6 +25,11 @@ module.exports = {
 				primary: '#ed4956',
 			},
 		},
+		flexGrow: {
+			0: 0,
+			DEFAULT: 1,
+			2: 2,
+		},
 	},
 	variants: {
 		extend: {
