@@ -20,6 +20,7 @@ const AddPost = ({ setIsOpen }) => {
 
 	useEffect(() => {
 		if (progress === 100) setIsOpen(false)
+		// eslint-disable-next-line
 	}, [progress])
 
 	const handleSubmitPost = async (e) => {
@@ -61,7 +62,7 @@ const AddPost = ({ setIsOpen }) => {
 					</div>
 				) : (
 					<div className='max-w-screen-sm mx-auto'>
-						<img className='w-full' src={previewUrl} alt='uploaded photo' />
+						<img className='w-full' src={previewUrl} alt='upload' />
 						<div className='w-full'>
 							<progress className='w-full' value={progress} max='100'>
 								{Math.round(progress)}

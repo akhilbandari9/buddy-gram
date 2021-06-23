@@ -47,11 +47,11 @@ const ProfileHeader = ({
 	}
 
 	return (
-		<header className='flex flex-row container mx-auto w-full text-black-light'>
-			<div className='flex-grow flex justify-center'>
+		<header className='flex flex-row container mx-auto w-full text-black-light '>
+			<div className='flex-grow flex justify-center ml-3'>
 				{profileUsername && (
 					<img
-						className='rounded-full h-40 w-40 flex'
+						className='rounded-full h-20 sm:h-30 w-20 sm:w-30 md:h-40 md:w-40 flex'
 						src={`/images/avatars/${profileUsername}.jpg`}
 						alt={profileUsername}
 					/>
@@ -60,12 +60,14 @@ const ProfileHeader = ({
 			{profileUsername && (
 				<section className='justify-center flex flex-col flex-grow-2'>
 					<div className='flex  flex-col'>
-						<div className='flex '>
-							<p className='text-3xl font-light mr-4'>{profileUsername}</p>
-							<div className=''>
+						<div className='flex items-center  mx-3'>
+							<p className='text-xl md:text-3xl font-light'>
+								{profileUsername}
+							</p>
+							<div className='md:ml-auto ml-4'>
 								{activeUser.username !== profileUsername && (
 									<button
-										className={`w-32 rounded px-6 py-2 font-bold focus:outline-none${
+										className={`w-32 rounded  px-5 md:px-6 py-1 md:py-2 font-bold focus:outline-none${
 											isFollowingProfile
 												? ` bg-gray-background text-gray-base border border-gray-primary`
 												: ` bg-gradient-to-r from-start to-end text-white border border-opacity-0`
@@ -81,7 +83,7 @@ const ProfileHeader = ({
 								)}
 							</div>
 						</div>
-						<ul className='flex list-none gap-10 mt-5'>
+						<ul className='flex list-none gap-3 md:gap-10 mt-3  md:mt-5 font-light text-md mx-3'>
 							<li>
 								<span className='font-semibold'>{photosCount}</span>
 								<span>{photosCount === 1 ? ' post' : ' posts'}</span>
@@ -97,7 +99,7 @@ const ProfileHeader = ({
 								<span>{` following`}</span>
 							</li>
 						</ul>
-						<div className='mt-5'>
+						<div className='mt-3 md:mt-5 mx-3'>
 							<p className='font-semibold text-base'>{fullName}</p>
 						</div>
 					</div>

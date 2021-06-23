@@ -1,6 +1,5 @@
 import { useEffect } from 'react'
 import { Timeline, Header, Sidebar } from '../components'
-import Modal from '../components/modal/Modal'
 
 const Dashboard = () => {
 	useEffect(() => {

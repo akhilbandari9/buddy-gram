@@ -1,10 +1,9 @@
-import { useContext, useState } from 'react'
+import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import FirebaseContext from '../context/firebase'
 import UserContext from '../context/user'
 import * as ROUTES from '../constants/routes'
 import { HomeIcon, LogoutIcon, PlusCircleIcon } from '@heroicons/react/outline'
-import { ModalProvider, useModalContext } from '../context/modal'
 import useModal from '../hooks/useModal'
 import Modal from './modal/Modal'
 import AddPost from './AddPost'
@@ -14,23 +13,23 @@ const Header = () => {
 	const { isOpen, setIsOpen } = useModal()
 
 	return (
-		<header className='h-12 md:h-16 bg-white border-b border-gray-primary mb-6 md:mb-8 mx-2'>
+		<header className='h-12 md:h-16 bg-white border-b border-gray-primary mb-3 md:mb-8 mx-2'>
 			<div className='container mx-auto max-w-screen-lg h-full'>
-				<div className='flex justify-between h-full'>
-					<div className='text-gray-700 text-center flex items-center cursor-pointer'>
-						<h1 className='flex justify-center w-full'>
-							<Link to={ROUTES.DASHBOARD} aria-label='Instagram Label'>
+				<div className='flex h-full w-full'>
+					<div className='text-gray-700 text-center flex items-center cursor-pointer mx-auto md:mx-0'>
+						<h1 className='flex justify-center'>
+							<Link to={ROUTES.DASHBOARD} aria-label='Fuse Label'>
 								<img
 									src='/images/logo.png'
-									alt='instagram'
-									className='mt-2 h-16'
+									alt='fuse'
+									className='mt-2 h-12 md:h-14'
 								/>
 							</Link>
 						</h1>
 					</div>
-					<div className='text-gray-base text-center flex items-center'>
+					<div className='text-gray-base text-center fixed bottom-0 right-0 md:static z-50 opacity-100 bg-white w-full md:w-96 py-2 ml-auto'>
 						{user ? (
-							<>
+							<nav className='flex w-full md:w-96 justify-around items-center bg-white'>
 								<Link to={ROUTES.DASHBOARD} aria-label='Dashboard'>
 									<HomeIcon className='w-6 md:w-8 mr-6 text-black-light cursor-pointer' />
 								</Link>
@@ -65,7 +64,7 @@ const Header = () => {
 										/>
 									</Link>
 								</div>
-							</>
+							</nav>
 						) : (
 							<>
 								<Link to={ROUTES.LOGIN}>

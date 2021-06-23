@@ -50,9 +50,10 @@ const useImageUpload = (file, { caption, uuid, userId }) => {
 		}
 
 		asyncFunction()
+		// eslint-disable-next-line
 	}, [file, submitFile])
 
-	return { progress, error, setSubmitFile }
+	return { progress, error, setSubmitFile, url }
 }
 
 export default useImageUpload
