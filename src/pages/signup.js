@@ -51,7 +51,7 @@ const Signup = () => {
 	}
 
 	useEffect(() => {
-		document.title = 'Sign Up - Instagram'
+		document.title = 'Sign Up - Fuse'
 	}, [])
 	return (
 		<div className='container flex mx-auto max-w-screen-md items-center h-screen'>
@@ -110,10 +110,6 @@ const Signup = () => {
 						>
 							{loading ? 'Loading...' : 'Sign Up'}
 						</button>
-						<small className='text-center w-4/5 text-xs mx-auto block mt-4 text-gray-base text-opacity-75'>
-							By signing up, you agree to our Terms, Data Policy and Cookies
-							Policy .
-						</small>
 					</form>
 				</div>
 				<div className='flex justify-center items-center flex-col w-full bg-white p-4 border border-gray-primary rounded'>

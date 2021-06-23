@@ -23,6 +23,8 @@ const Profile = () => {
 		checkUserExists()
 	}, [username, history])
 
+	document.title = 'Profile'
+
 	return (
 		user && (
 			<div className='bg-gray-background mx-auto'>

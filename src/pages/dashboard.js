@@ -3,7 +3,7 @@ import { Timeline, Header, Sidebar } from '../components'
 
 const Dashboard = () => {
 	useEffect(() => {
-		document.title = 'Instagram'
+		document.title = 'Fuse'
 	}, [])
 	return (
 		<div className='bg-gray-background'>
