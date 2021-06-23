@@ -1,17 +1,17 @@
 import Firebase from 'firebase/app'
 import 'firebase/firestore'
 import 'firebase/auth'
+import 'firebase/storage'
 
 const config = {
-	apiKey: 'AIzaSyDGdrqzykTE2y4zppq5c1Zh4nYNeKNuww0',
-	authDomain: 'instagram-clone-2fdc0.firebaseapp.com',
-	projectId: 'instagram-clone-2fdc0',
-	storageBucket: 'instagram-clone-2fdc0.appspot.com',
-	messagingSenderId: '1012089431711',
-	appId: '1:1012089431711:web:3cf467eff6615c863624aa',
+	apiKey: process.env.REACT_APP_API_KEY,
+	authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+	projectId: process.env.REACT_APP_PROJECT_ID,
+	storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+	messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+	appId: process.env.REACT_APP_APP_ID,
 }
 
 const firebase = Firebase.initializeApp(config)
 const { FieldValue } = Firebase.firestore
-
 export { firebase, FieldValue }

@@ -25,10 +25,11 @@ const UserProfile = ({ user }) => {
 			dispatch({
 				photosCollection: photos,
 				followerCount: profile.followers.length,
+				profile: user,
 			})
 		}
 		profile && getProfileInfoAndPhotos()
-	}, [profile])
+	}, [profile, user])
 	return (
 		<div>
 			<ProfileHeader

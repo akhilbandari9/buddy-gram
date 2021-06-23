@@ -68,7 +68,7 @@ const ProfileHeader = ({
 										className={`w-32 rounded px-6 py-2 font-bold focus:outline-none${
 											isFollowingProfile
 												? ` bg-gray-background text-gray-base border border-gray-primary`
-												: ` bg-blue-medium text-white border border-opacity-0`
+												: ` bg-gradient-to-r from-start to-end text-white border border-opacity-0`
 										}`}
 										onClick={handleToggleFollow}
 									>

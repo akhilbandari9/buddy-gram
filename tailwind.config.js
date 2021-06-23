@@ -24,6 +24,15 @@ module.exports = {
 			red: {
 				primary: '#ed4956',
 			},
+			start: {
+				DEFAULT: 'rgba(63, 94, 251, 1)',
+			},
+			end: {
+				DEFAULT: 'rgba(226, 70, 252, 1)',
+			},
+			transparent: {
+				DEFAULT: 'rgba(0, 0, 0, 0)',
+			},
 		},
 		flexGrow: {
 			0: 0,

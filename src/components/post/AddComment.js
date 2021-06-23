@@ -35,6 +35,7 @@ const AddComment = ({ commentRef, docId, comments, setComments }) => {
 				<input
 					type='text'
 					ref={commentRef}
+					autoComplete='off'
 					aria-label='Add a comment'
 					className='text-sm text-gray-base w-full mr-3 py-4 px-4 outline-none'
 					name='add-comment'
@@ -43,7 +44,7 @@ const AddComment = ({ commentRef, docId, comments, setComments }) => {
 					onChange={({ target }) => setComment(target.value)}
 				/>
 				<button
-					className={`text-sm font-bold text-blue-medium  outline-none focus:outline-none ${
+					className={`text-sm font-bold bg-clip-text text-transparent bg-gradient-to-r from-start to-end  outline-none focus:outline-none ${
 						!comment && ` opacity-50`
 					}`}
 					disabled={comment.length < 1}

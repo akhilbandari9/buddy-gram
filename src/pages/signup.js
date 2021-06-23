@@ -34,6 +34,7 @@ const Signup = () => {
 					username: userName.toLowerCase(),
 					fullname: fullName,
 					emailAddress: email.toLowerCase(),
+					followers: [],
 					following: [],
 					dateCreated: Date.now(),
 				})
@@ -104,7 +105,7 @@ const Signup = () => {
 						<button
 							type='submit'
 							disabled={isInvalid}
-							className={`bg-blue-medium mt-4 text-white w-full rounded h-8 font-bold 
+							className={`bg-gradient-to-r from-start to-end mt-4 text-white w-full rounded h-8 font-bold 
 						${isInvalid && ' opacity-50'}`}
 						>
 							{loading ? 'Loading...' : 'Sign Up'}
@@ -118,7 +119,10 @@ const Signup = () => {
 				<div className='flex justify-center items-center flex-col w-full bg-white p-4 border border-gray-primary rounded'>
 					<p className='text-sm'>
 						Have an account?{'   '}
-						<Link to={ROUTES.LOGIN} className='font-bold text-blue-medium'>
+						<Link
+							to={ROUTES.LOGIN}
+							className='font-bold bg-clip-text text-transparent bg-gradient-to-r from-start to-end'
+						>
 							Log in
 						</Link>
 					</p>

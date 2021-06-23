@@ -3,7 +3,7 @@ import { DotsHorizontalIcon } from '@heroicons/react/outline'
 
 const Header = ({ username }) => {
 	return (
-		<div className='flex  h-4 p-6  md:py-8 '>
+		<div className='flex  h-4 py-6 px-2 md:px-4'>
 			<div className='flex items-center w-full'>
 				<Link to={`/p/${username}`} className='flex items-center'>
 					<img

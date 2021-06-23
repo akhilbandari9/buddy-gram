@@ -40,7 +40,9 @@ const SuggestedProfile = ({
 				<button
 					onClick={handlFollowUser}
 					className={`font-bold ml-auto text-xs outline-none focus:outline-none ${
-						updating ? `text-gray-light` : `text-blue-medium `
+						updating
+							? `text-gray-light`
+							: `bg-clip-text text-transparent bg-gradient-to-r from-start to-end`
 					}`}
 				>
 					Follow

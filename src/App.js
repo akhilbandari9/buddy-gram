@@ -1,4 +1,4 @@
-import { lazy, Suspense } from 'react'
+import { lazy, Suspense, useState } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import * as ROUTES from './constants/routes'
 import useAuthListener from './hooks/useAuthListener'
@@ -15,6 +15,8 @@ const Profile = lazy(() => import('./pages/profile'))
 
 function App() {
 	const { user } = useAuthListener()
+	const [isOpen, setIsOpen] = useState(false)
+
 	return (
 		<UserContext.Provider value={{ user }}>
 			<Router>

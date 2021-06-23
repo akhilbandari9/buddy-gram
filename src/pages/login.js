@@ -78,7 +78,7 @@ const Login = () => {
 						<button
 							type='submit'
 							disabled={isInvalid}
-							className={`bg-blue-medium mt-4 text-white w-full rounded h-8 font-bold 
+							className={`bg-gradient-to-r from-start to-end mt-4 text-white w-full rounded h-8 font-bold 
 						${isInvalid && ' opacity-50'}`}
 						>
 							{loading ? 'Loading...' : 'Log In'}
@@ -88,8 +88,10 @@ const Login = () => {
 				<div className='flex justify-center items-center flex-col w-full bg-white p-4 border border-gray-primary rounded'>
 					<p className='text-sm'>
 						Don't have an account ?{' '}
-						<Link to={ROUTES.SIGNUP} className='font-bold text-blue-medium'>
-							Signup
+						<Link to={ROUTES.SIGNUP} className='font-bold'>
+							<span className='font-bold bg-clip-text text-transparent bg-gradient-to-r from-start to-end'>
+								Signup
+							</span>
 						</Link>
 					</p>
 				</div>
@@ -100,7 +102,7 @@ const Login = () => {
 				>
 					<p className='text-sm'>Click below to login as a Dummy User</p>
 					<button
-						className='bg-blue-medium mt-4 text-white px-4 rounded h-8 font-bold '
+						className='bg-gradient-to-r from-start to-end mt-4 text-white px-4 rounded h-8 font-bold '
 						type='submit'
 					>
 						{loading2 ? `Logging In...` : `Test User Login`}
