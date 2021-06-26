@@ -52,8 +52,9 @@ const ProfileHeader = ({
 				{profileUsername && (
 					<img
 						className='rounded-full h-20 sm:h-30 w-20 sm:w-30 md:h-40 md:w-40 flex'
-						src={`/images/avatars/${profileUsername}.jpg`}
+						src={profile.avatar}
 						alt={profileUsername}
+						onError={(e) => (e.target.src = `/images/avatars/default.png`)}
 					/>
 				)}
 			</div>

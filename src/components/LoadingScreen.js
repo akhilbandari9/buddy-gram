@@ -4,7 +4,7 @@ const LoadingScreen = () => {
 			<div className='w-32 h-32'>
 				<img
 					className='w-full h-full'
-					src='/images/instagram-gray.png'
+					src='/images/logo.png'
 					alt='Loading Screen Logo'
 				/>
 			</div>

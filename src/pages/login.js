@@ -44,9 +44,9 @@ const Login = () => {
 	}, [])
 
 	return (
-		<div className='container flex mx-auto max-w-screen-md items-center h-screen'>
-			<div className='w-3/5 hidden md:block'>
-				<img src='/images/iphone-with-profile.jpg' alt='ihone with profile' />
+		<div className='container flex mx-auto max-w-screen-lg items-center h-screen'>
+			<div className='w-4/5 hidden md:block'>
+				<img src='/images/login-image.png' alt='ihone with profile' />
 			</div>
 			<div className='flex flex-col w-4/5 sm:w-3/5 md:w-2/5 mx-auto'>
 				<div className='flex flex-col items-center bg-white p-4 border border-gray-primary mb-4 rounded'>
@@ -54,7 +54,7 @@ const Login = () => {
 						<img
 							className='mt-2 w-6/12 mb-4'
 							src='/images/logo.png'
-							alt='Instagram'
+							alt='Fuse'
 						/>
 					</h1>
 					{error && <p className='mb-4 text-xs text-red-primary'>{error}</p>}

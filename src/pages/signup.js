@@ -25,6 +25,7 @@ const Signup = () => {
 				const createdUserResult = await firebase
 					.auth()
 					.createUserWithEmailAndPassword(email, password)
+
 				createdUserResult.user.updateProfile({
 					displayName: userName,
 				})

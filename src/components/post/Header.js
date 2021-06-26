@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom'
 import { DotsHorizontalIcon } from '@heroicons/react/outline'
 
-const Header = ({ username }) => {
+const Header = ({ username, avatar }) => {
 	return (
 		<div className='flex  h-4 py-6 px-2 md:px-4'>
 			<div className='flex items-center w-full'>
 				<Link to={`/p/${username}`} className='flex items-center'>
 					<img
-						src={`/images/avatars/${username}.jpg`}
+						src={avatar}
 						onError={(e) => (e.target.src = `/images/avatars/default.png`)}
 						className='w-8 rounded-full'
 						alt={`${username}`}

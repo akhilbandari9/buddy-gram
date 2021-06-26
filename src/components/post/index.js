@@ -9,11 +9,10 @@ import Comments from './Comments'
 const Post = ({ photoObj }) => {
 	const commentInput = useRef(null)
 	const handleFocus = () => commentInput.current.focus()
-
 	return (
 		<div className='bg-white mb-6 md:mb-12 max-w-screen-sm w-full border border-gray-primary rounded'>
-			<Header imageSrc={photoObj.imageSrc} username={photoObj.username} />
-			<Photo src={photoObj.imageSrc} />
+			<Header username={photoObj.username} avatar={photoObj.avatar} />
+			<Photo src={photoObj.imageSrc} caption={photoObj.caption} />
 			<Actions
 				docId={photoObj.docId}
 				totalLikes={photoObj.likes.length}

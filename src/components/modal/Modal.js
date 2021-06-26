@@ -18,14 +18,12 @@ const Modal = ({ children, isOpen, setIsOpen }) => {
 
 			<div className='opacity-100 z-50 w-screen h-full md:h-auto md:max-w-screen-md  bg-gray-background rounded-lg pt-0 p-3'>
 				<div className='h-full'>
-					<div className='flex justify-end items-center h-16 md:h-10'>
+					<div className='flex justify-end items-center h-16 md:h-10 m-8'>
 						<button onClick={handleClose}>
 							<XIcon className='w-10 md:w-6 text-black-light' />
 						</button>
 					</div>
-					<div className='mx-auto flex items-center h-full justify-center'>
-						{children}
-					</div>
+					<div className='mx-auto p-8 flex   justify-center'>{children}</div>
 				</div>
 			</div>
 		</div>,

@@ -7,11 +7,19 @@ import { HomeIcon, LogoutIcon, PlusCircleIcon } from '@heroicons/react/outline'
 import useModal from '../hooks/useModal'
 import Modal from './modal/Modal'
 import AddPost from './AddPost'
+// import { useEffect } from 'react'
 const Header = () => {
 	const { user } = useContext(UserContext)
 	const { firebase } = useContext(FirebaseContext)
 	const { isOpen, setIsOpen } = useModal()
-
+	// useEffect(() => {
+	// 	let user2 = firebase.auth().currentUser
+	// 	console.log(user2)
+	// 	user2?.updateProfile({
+	// 		photoURL:
+	// 			'https://firebasestorage.googleapis.com/v0/b/instagram-clone-2fdc0.appspot.com/o/avatars%2Fjonsnow1.jpg?alt=media&token=5c09adb5-f229-4241-8505-2361e5f05034',
+	// 	})
+	// }, [])
 	return (
 		<header className='h-12 md:h-16 bg-white border-b border-gray-primary mb-3 md:mb-8 mx-2'>
 			<div className='container mx-auto max-w-screen-lg h-full'>
@@ -27,7 +35,7 @@ const Header = () => {
 							</Link>
 						</h1>
 					</div>
-					<div className='text-gray-base text-center fixed bottom-0 right-0 md:static z-50 opacity-100 bg-white w-full md:w-96 py-2 ml-auto'>
+					<div className='text-gray-base text-center fixed bottom-0 right-0 md:static z-50 md:z-0 opacity-100 bg-white w-full md:w-96 py-2 ml-auto'>
 						{user ? (
 							<nav className='flex w-full md:w-96 justify-around items-center bg-white'>
 								<Link to={ROUTES.DASHBOARD} aria-label='Dashboard'>
@@ -58,9 +66,12 @@ const Header = () => {
 								<div className='flex items-center cursor-pointer'>
 									<Link to={`/p/${user.displayName}`}>
 										<img
-											src={`/images/avatars/${user.displayName}.jpg`}
+											src={user.photoURL}
 											className='rounded-full h-7 md:h-8 w-7 md:w-8'
 											alt={`${user.displayName} profile`}
+											onError={(e) =>
+												(e.target.src = `/images/avatars/default.png`)
+											}
 										/>
 									</Link>
 								</div>
