@@ -40,6 +40,7 @@ const Suggestions = ({ loggedInUserDocId, userId, following }) => {
 						profileId={profile.userId}
 						userId={userId}
 						loggedInUserDocId={loggedInUserDocId}
+						avatar={profile.avatar}
 					/>
 				))}
 			</div>

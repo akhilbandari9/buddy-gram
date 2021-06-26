@@ -11,6 +11,7 @@ const SuggestedProfile = ({
 	loggedInUserDocId,
 	userId,
 	profileId,
+	avatar,
 }) => {
 	const [followed, setFollowed] = useState(false)
 	const [updating, setUpdating] = useState(false)
@@ -26,8 +27,7 @@ const SuggestedProfile = ({
 		!followed && (
 			<div className='py-2 w-full flex flex-row items-center '>
 				<img
-					src={`/images/avatars/${username}.jpg`}
-					onError={(e) => (e.target.src = `/images/avatars/default.png`)}
+					src={avatar ? avatar : '/images/avatars/default.png'}
 					className='h-8 mr-3 rounded-full'
 					alt={`${username}`}
 				/>
