@@ -1,5 +1,7 @@
 # fuse-social
 
+Demo - https://fuse-social.vercel.app
+
 - Social Media Application. 
 - Instagram Clone
 - Reactjs, Firebase, Tailwindcss
