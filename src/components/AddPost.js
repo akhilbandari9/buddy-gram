@@ -62,7 +62,7 @@ const AddPost = ({ setIsOpen }) => {
 					</div>
 				) : (
 					<div className='max-w-screen-sm mx-auto'>
-						<img className='w-full' src={previewUrl} alt='upload' />
+						<img className='h-72 md:h-96' src={previewUrl} alt='upload' />
 						<div className='w-full'>
 							<progress className='w-full' value={progress} max='100'>
 								{Math.round(progress)}

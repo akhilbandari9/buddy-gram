@@ -15,7 +15,7 @@ const User = ({ username, fullName, avatar }) => {
 			<div className='flex items-center justify-between col-span-1'>
 				<img
 					className='rounded-full w-16 flex mr-3'
-					src={avatar}
+					src={avatar ? avatar : `/images/avatars/default.png`}
 					alt={username}
 					onError={(e) => (e.target.src = `/images/avatars/default.png`)}
 				/>
